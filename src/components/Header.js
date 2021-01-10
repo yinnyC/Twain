@@ -3,13 +3,13 @@ import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import logo from './logo.svg';
 export default function Header() {
 	return (
-		<Navbar bg="light" expand="lg">
+		<Navbar bg="light" expand="lg" sticky="top">
 			<Navbar.Brand href="#home">
 				<img
 					src={logo}
 					width="60"
 					height="30"
-					className="d-inline-block align-top ml-2"
+					className="d-inline-block align-top ml-2	"
 					alt="Twain logo"
 				/>
 			</Navbar.Brand>
