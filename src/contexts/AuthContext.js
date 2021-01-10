@@ -7,8 +7,13 @@ export function useAuth() {
 }
 export function AuthProvider({ children }) {
 	const [currentUser, setCurrentUser] = useState();
-	function signup(email, password) {
-		return auth.createUserWithEmailAndPassword(email, password);
+	function signup(email, password, catchErrorMsg) {
+		return auth
+			.createUserWithEmailAndPassword(email, password)
+			.catch((error) => {
+				var errorMessage = error.message;
+				catchErrorMsg(errorMessage);
+			});
 	}
 	useEffect(() => {
 		const unsubscribe = auth.onAuthStateChanged((user) => {
