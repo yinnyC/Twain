@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Form, Button, Card, Alert } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useAuth } from '../contexts/AuthContext';
+import { Link } from 'react-router-dom';
 export default function Signup(props) {
 	const emailRef = useRef();
 	const passwordRef = useRef();
@@ -25,6 +26,7 @@ export default function Signup(props) {
 				passwordRef.current.value,
 				catchErrorMsg
 			);
+			props.onSwitch();
 		} catch {
 			setError(error);
 		}
@@ -56,9 +58,9 @@ export default function Signup(props) {
 				</Card.Body>
 				<div className="w-100 text-center mb-2">
 					Already have an account?
-					<a href="#" onClick={props.onSwitch} return false>
+					<Link to="" onClick={props.onSwitch}>
 						Log In
-					</a>
+					</Link>
 				</div>
 			</Card>
 		</div>

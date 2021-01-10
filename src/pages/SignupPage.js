@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.png';
 import { Image, Col } from 'react-bootstrap';
 import Signup from '../components/Signup';
 import './SignupPage.css';
 import Login from '../components/Login';
 export default function SignupPage() {
-	const handleDisplay = () => {
-		console.log('In Handler');
-		display = <Login onSwitch={handleDisplay} />;
+	const handleSwitchToSignUp = () => {
+		setFormToDisplay(<Signup onSwitch={handleSwitchToLogin} />);
 	};
-	let display = <Signup onSwitch={handleDisplay} />;
+	const handleSwitchToLogin = () => {
+		setFormToDisplay(<Login onSwitch={handleSwitchToSignUp} />);
+	};
+	const [formToDisplay, setFormToDisplay] = useState(
+		<Signup onSwitch={handleSwitchToLogin} />
+	);
 	return (
 		<div
 			className="row justify-content-center align-items-center"
@@ -19,7 +23,7 @@ export default function SignupPage() {
 				<Image src={logo} className="mx-auto d-block Logo" alt="Logo" fluid />
 			</Col>
 			<Col md={{ span: 4, offset: 1 }} className="Signup p-4">
-				{display}
+				{formToDisplay}
 			</Col>
 		</div>
 	);

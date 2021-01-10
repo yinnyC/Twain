@@ -15,6 +15,13 @@ export function AuthProvider({ children }) {
 				catchErrorMsg(errorMessage);
 			});
 	}
+	function login(email, password, catchErrorMsg) {
+		return auth.signInWithEmailAndPassword(email, password).catch((error) => {
+			var errorMessage = error.message;
+			catchErrorMsg(errorMessage);
+			console.log(errorMessage);
+		});
+	}
 	useEffect(() => {
 		const unsubscribe = auth.onAuthStateChanged((user) => {
 			setCurrentUser(user);
@@ -24,6 +31,7 @@ export function AuthProvider({ children }) {
 	const value = {
 		currentUser,
 		signup,
+		login,
 	};
 
 	return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

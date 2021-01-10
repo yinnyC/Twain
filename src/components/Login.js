@@ -1,13 +1,15 @@
 import React, { useRef, useState } from 'react';
 import { Form, Button, Card, Alert } from 'react-bootstrap';
+import { Link, useHistory } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useAuth } from '../contexts/AuthContext';
-export default function Login() {
+export default function Login(props) {
 	const emailRef = useRef();
 	const passwordRef = useRef();
-	const { signup } = useAuth();
+	const { login } = useAuth();
 	const [error, setError] = useState('');
 	const [loading, setLoading] = useState(false);
+	const history = useHistory();
 	const catchErrorMsg = (msg) => {
 		setError(msg);
 	};
@@ -16,11 +18,12 @@ export default function Login() {
 		try {
 			setError('');
 			setLoading(true);
-			await signup(
+			await login(
 				emailRef.current.value,
 				passwordRef.current.value,
 				catchErrorMsg
 			);
+			history.push('/home');
 		} catch {
 			setError(error);
 		}
@@ -47,7 +50,10 @@ export default function Login() {
 					</Form>
 				</Card.Body>
 				<div className="w-100 text-center mb-2">
-					Already have an account? Log In
+					Don't have an account?{' '}
+					<Link to="" onClick={props.onSwitch}>
+						Sign up
+					</Link>
 				</div>
 			</Card>
 		</div>
