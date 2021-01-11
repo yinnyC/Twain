@@ -19,11 +19,28 @@ export function AuthProvider({ children }) {
 		return auth.signInWithEmailAndPassword(email, password).catch((error) => {
 			var errorMessage = error.message;
 			catchErrorMsg(errorMessage);
-			console.log(errorMessage);
 		});
 	}
 	function logout() {
 		return auth.signOut();
+	}
+	function resetPassword(email, catchErrorMsg) {
+		return auth.sendPasswordResetEmail(email).catch((error) => {
+			var errorMessage = error.message;
+			catchErrorMsg(errorMessage);
+		});
+	}
+	function updateEmail(email, catchErrorMsg) {
+		currentUser.updateEmail(email).catch((error) => {
+			var errorMessage = error.message;
+			catchErrorMsg(errorMessage);
+		});
+	}
+	function updatePassword(password, catchErrorMsg) {
+		currentUser.updatePassword(password).catch((error) => {
+			var errorMessage = error.message;
+			catchErrorMsg(errorMessage);
+		});
 	}
 	useEffect(() => {
 		const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -36,6 +53,9 @@ export function AuthProvider({ children }) {
 		signup,
 		login,
 		logout,
+		resetPassword,
+		updateEmail,
+		updatePassword,
 	};
 
 	return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

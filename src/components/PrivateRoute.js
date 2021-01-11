@@ -1,6 +1,21 @@
-import React, { Component } from 'react';
-
+import React from 'react';
+import { Route, Redirect } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 // Create A Warpper for a current route
-export default function PrivateRoute(component: Component, ...rest) {
-	return <div></div>;
+export default function PrivateRoute({ component: Component, ...rest }) {
+	const { currentUser } = useAuth();
+
+	return (
+		<Route
+			{...rest}
+			render={(props) => {
+				console.log('here');
+				return currentUser ? (
+					<Component {...props} />
+				) : (
+					<Redirect to="/twain" />
+				);
+			}}
+		></Route>
+	);
 }

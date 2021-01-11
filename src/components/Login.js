@@ -23,7 +23,7 @@ export default function Login(props) {
 				passwordRef.current.value,
 				catchErrorMsg
 			);
-			history.push('/home');
+			history.push('/');
 		} catch {
 			setError(error);
 		}
@@ -49,10 +49,25 @@ export default function Login(props) {
 						</Button>
 					</Form>
 				</Card.Body>
-				<div className="w-100 text-center mb-2">
+				<div className="w-100 text-center ">
 					Don't have an account?{' '}
-					<Link to="" onClick={props.onSwitch}>
+					<Link
+						to="/twain"
+						onClick={() => {
+							props.onSwitch('signup');
+						}}
+					>
 						Sign up
+					</Link>
+				</div>
+				<div className="w-100 text-center mb-2">
+					<Link
+						to="/twain"
+						onClick={() => {
+							props.onSwitch('forgotpassword');
+						}}
+					>
+						Forgot Password?
 					</Link>
 				</div>
 			</Card>
