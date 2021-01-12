@@ -53,7 +53,7 @@ export default function PlanList() {
 					<option value="Recreation">Recreation</option>
 				</Form.Control>
 			</Form>
-			<div className=" PlanList">{plans}</div>
+			<div className=" PlanList">{planList ? plans : ''}</div>
 		</Container>
 	);
 }
