@@ -1,4 +1,4 @@
-import firebase from 'firebase/app';
+import firebase from 'firebase';
 import 'firebase/auth';
 
 const app = firebase.initializeApp({
@@ -10,6 +10,6 @@ const app = firebase.initializeApp({
 	appId: process.env.REACT_APP_FIREBASE_APP_ID,
 	measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 });
-
+// console.log(firebase.auth.Auth.Persistence.SESSION);
 export const auth = app.auth();
-export default app;
+export default firebase;

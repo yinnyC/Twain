@@ -9,7 +9,6 @@ export default function PrivateRoute({ component: Component, ...rest }) {
 		<Route
 			{...rest}
 			render={(props) => {
-				console.log('here');
 				return currentUser ? (
 					<Component {...props} />
 				) : (
