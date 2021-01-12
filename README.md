@@ -2,6 +2,8 @@
 
 For couples, TWAIN app helps them make plans and conduct it together with a virtual vision board
 
+check out the demo website -> [Link](https://yinnyc.github.io/Twain/)
+
 - [x] Built a log-in system with Firebase authentication
   - [x] Sign up
         ![signup](./demo-img/sigup.png)
