@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { Container, CardGroup } from 'react-bootstrap';
 import { useAuth } from '../contexts/AuthContext';
 import firebase from '../firebase';
 import Plan from './Plan';
-
+import './PlanList.css';
 export default function PlanList() {
 	const { currentUser } = useAuth();
 	const [planList, setPlanList] = useState([]);
@@ -21,11 +22,10 @@ export default function PlanList() {
 	}, []);
 	console.log(planList);
 	return (
-		<div>
-			<h1>To-do list</h1>
+		<Container className="mt-5 PlanList">
 			{planList
 				? planList.map((plan) => <Plan plan={plan} key={plan.id} />)
 				: ''}
-		</div>
+		</Container>
 	);
 }

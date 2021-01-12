@@ -21,9 +21,7 @@ export default function VisionBoard() {
 			catagory,
 		};
 		visionboardRef.push(plan);
-		console.log(titleRef.current.value);
-		console.log(categoryRef.current.value);
-		console.log(currentUser.uid);
+		handleClose();
 	}
 	return (
 		<>
@@ -56,19 +54,11 @@ export default function VisionBoard() {
 						<Form.Group>
 							<Form.Label>Category</Form.Label>
 							<Form.Control as="select" ref={categoryRef} required>
-								<option value="Health, Fitness and Beauty">
-									Health, Fitness and Beauty
-								</option>
-								<option value="Family, Friends and Romance">
-									Family, Friends and Romance
-								</option>
-								<option value="Career, Bussiness and Study">
-									Career, Bussiness and Study
-								</option>
+								<option value="Health">Health,Fitness and Beauty</option>
+								<option value="Romance">Family,Friends and Romance</option>
+								<option value="Career">Career,Bussiness and Study</option>
 								<option value="Financial">Financial</option>
-								<option value="Fun, Recreation and Travel">
-									Fun, Recreation and Travel
-								</option>
+								<option value="Recreation">Fun, Recreation and Travel</option>
 							</Form.Control>
 						</Form.Group>
 					</Form>
