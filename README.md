@@ -6,8 +6,9 @@ check out the demo website -> [Link](https://yinnyc.github.io/Twain/)
 
 - [x] Built a log-in system with Firebase authentication
   - [x] Sign up
-        ![signup](./demo-img/sigup.png)
+        ![signup](./demo-img/signup.png)
   - [x] Sign in
+        ![login](./demo-img/login.png)
   - [x] Forgot password
         ![update](./demo-img/updateprofile.png)
   - [x] Update user profile
