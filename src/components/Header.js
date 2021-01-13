@@ -12,7 +12,7 @@ export default function Header(props) {
 		try {
 			await logout();
 			console.log(error);
-			history.push('/twain');
+			history.push('/');
 		} catch {
 			setError('Failed to log out');
 		}

@@ -24,7 +24,7 @@ export default function Login(props) {
 				passwordRef.current.value,
 				catchErrorMsg
 			);
-			history.push('/');
+			history.push('/twain');
 		} catch {
 			setError(error);
 		}
@@ -60,7 +60,7 @@ export default function Login(props) {
 				<Card.Footer style={{ backgroundColor: '#fff' }}>
 					<div className="w-100 text-center mt-2">
 						<Link
-							to="/twain"
+							to="/"
 							style={{ color: '#fff' }}
 							className="btn btn-secondary col-md-10 btn-lg"
 							onClick={() => {
@@ -72,7 +72,7 @@ export default function Login(props) {
 					</div>
 					<div className="w-100 text-center mt-2">
 						<Link
-							to="/twain"
+							to="/"
 							onClick={() => {
 								props.onSwitch('forgotpassword');
 							}}

@@ -9,8 +9,8 @@ function App() {
 		<Router>
 			<AuthProvider>
 				<Switch>
-					<PrivateRoute exact path="/" component={Homepage} />
-					<Route path="/twain" component={SignupPage} />
+					<Route exact path="/" component={SignupPage} />
+					<PrivateRoute path="/twain" component={Homepage} />
 				</Switch>
 			</AuthProvider>
 		</Router>

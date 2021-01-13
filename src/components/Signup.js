@@ -67,7 +67,7 @@ export default function Signup(props) {
 						<Link
 							className="btn btn-secondary col-md-10 btn-lg"
 							style={{ color: '#fff' }}
-							to="/twain"
+							to="/"
 							onClick={() => {
 								props.onSwitch('login');
 							}}

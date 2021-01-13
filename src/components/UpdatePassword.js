@@ -83,7 +83,7 @@ export default function UpdatePassword(props) {
 				</Card.Body>
 				<div className="w-100 text-center mb-2">
 					<Link
-						to="/"
+						to=""
 						onClick={() => {
 							props.onSceneSwitch('visionboard');
 						}}

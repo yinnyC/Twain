@@ -50,7 +50,7 @@ export default function ForgotPassword(props) {
 				<Card.Footer style={{ backgroundColor: '#fff' }}>
 					<div className="w-100 text-center">
 						<Link
-							to="/twain"
+							to="/"
 							onClick={() => {
 								props.onSwitch('login');
 							}}

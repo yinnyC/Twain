@@ -8,6 +8,7 @@ export function useAuth() {
 }
 export function AuthProvider({ children }) {
 	const [currentUser, setCurrentUser] = useState();
+	const [loading, setLoading] = useState(true);
 	function signup(email, password, catchErrorMsg) {
 		return auth
 			.createUserWithEmailAndPassword(email, password)
@@ -26,9 +27,9 @@ export function AuthProvider({ children }) {
 	}
 	async function login(email, password, catchErrorMsg) {
 		try {
+			await setpersistence();
 			await auth.signInWithEmailAndPassword(email, password);
 			console.log('sign-in complete');
-			await setpersistence();
 		} catch (error) {
 			const errorMessage = error.message;
 			catchErrorMsg(errorMessage);
@@ -36,19 +37,6 @@ export function AuthProvider({ children }) {
 		}
 	}
 
-	// function login(email, password, catchErrorMsg) {
-	// 	auth
-	// 		.setPersistence(firebase.auth.Auth.Persistence.SESSION)
-	// 		.then(() => {
-	// 			return auth.signInWithEmailAndPassword(email, password, catchErrorMsg);
-	// 		})
-	// 		.catch((error) => {
-	// 			// Handle Errors here.
-	// 			var errorCode = error.code;
-	// 			var errorMessage = error.message;
-	// 			console.log(errorCode, errorMessage);
-	// 		});
-	// }
 	function logout() {
 		return auth.signOut();
 	}
@@ -71,10 +59,11 @@ export function AuthProvider({ children }) {
 		});
 	}
 	useEffect(() => {
-		const unsubscribe = auth.onAuthStateChanged((user) => {
+		const unsubscriber = auth.onAuthStateChanged((user) => {
 			setCurrentUser(user);
+			setLoading(false);
 		});
-		return unsubscribe;
+		return unsubscriber;
 	}, []);
 	const value = {
 		currentUser,
@@ -86,5 +75,9 @@ export function AuthProvider({ children }) {
 		updatePassword,
 	};
 
-	return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+	return (
+		<AuthContext.Provider value={value}>
+			{!loading && children}
+		</AuthContext.Provider>
+	);
 }
