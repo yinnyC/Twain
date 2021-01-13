@@ -1,0 +1,11 @@
+$primary: #ed8546;
+$secondary: #f3bce6;
+$body-color: #35221b;
+$btn-color: #fff;
+$border-radius: 15px;
+.btn {
+	color: $btn-color;
+}
+// Bootstrap and its default variables
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import 'bootstrap';
