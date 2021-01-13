@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Form } from 'react-bootstrap';
-import { useAuth } from '../contexts/AuthContext';
-import firebase from '../firebase';
-import Plan from './Plan';
+import { useAuth } from '../../contexts/AuthContext';
+import firebase from '../../firebase';
+import Plan from '../Plan';
 import './PlanList.css';
 export default function PlanList() {
 	const { currentUser } = useAuth();

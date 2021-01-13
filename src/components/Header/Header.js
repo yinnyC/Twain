@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '../../contexts/AuthContext';
 import { useHistory } from 'react-router-dom';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import logo from './logo.svg';
@@ -11,10 +11,9 @@ export default function Header(props) {
 		setError('');
 		try {
 			await logout();
-			console.log(error);
 			history.push('/');
 		} catch {
-			setError('Failed to log out');
+			setError(error);
 		}
 	}
 	return (

@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Form, Modal, Button } from 'react-bootstrap';
 import { useAuth } from '../contexts/AuthContext';
 import firebase from '../firebase';
-import PlanList from './PlanList';
+import PlanList from './PlanList/PlanList';
 export default function VisionBoard() {
 	const { currentUser } = useAuth();
 	const [show, setShow] = useState(false);

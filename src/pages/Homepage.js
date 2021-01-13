@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Header from '../components/Header';
+import Header from '../components/Header/Header';
 import VisionBoard from '../components/VisionBoard';
 import UpdatePassword from '../components/UpdatePassword';
 export default function Homepage() {

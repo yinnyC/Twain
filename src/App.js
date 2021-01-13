@@ -1,9 +1,9 @@
 import React from 'react';
-import { AuthProvider } from '../contexts/AuthContext';
+import { AuthProvider } from './contexts/AuthContext';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
-import SignupPage from '../pages/SignupPage';
-import Homepage from '../pages/Homepage';
-import PrivateRoute from './PrivateRoute';
+import SignupPage from './pages/SignupPage';
+import Homepage from './pages/Homepage';
+import PrivateRoute from './components/PrivateRoute';
 function App() {
 	return (
 		<Router>

@@ -4,7 +4,6 @@ import { useAuth } from '../contexts/AuthContext';
 // Create A Warpper for a current route
 export default function PrivateRoute({ component: Component, ...rest }) {
 	const { currentUser } = useAuth();
-	console.log('in private Route');
 	return (
 		<Route
 			{...rest}
