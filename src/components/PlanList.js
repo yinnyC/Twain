@@ -19,7 +19,7 @@ export default function PlanList() {
 			}
 			setPlanList(tempList);
 		});
-	}, []);
+	}, [currentUser]);
 
 	const plans = planList
 		.filter((plan) => {

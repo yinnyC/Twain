@@ -37,21 +37,28 @@ export default function ForgotPassword(props) {
 							<Form.Label>Email</Form.Label>
 							<Form.Control type="email" ref={emailRef} required />
 						</Form.Group>
-						<Button disable={loading} className="w-100" type="submit">
+						<Button
+							disable={loading}
+							className="w-100 btn-lg"
+							style={{ color: '#fff' }}
+							type="submit"
+						>
 							Reset Password
 						</Button>
 					</Form>
 				</Card.Body>
-				<div className="w-100 text-center mb-2">
-					<Link
-						to="/twain"
-						onClick={() => {
-							props.onSwitch('login');
-						}}
-					>
-						Back to Log in
-					</Link>
-				</div>
+				<Card.Footer style={{ backgroundColor: '#fff' }}>
+					<div className="w-100 text-center">
+						<Link
+							to="/twain"
+							onClick={() => {
+								props.onSwitch('login');
+							}}
+						>
+							Back to Log in
+						</Link>
+					</div>
+				</Card.Footer>
 			</Card>
 		</div>
 	);

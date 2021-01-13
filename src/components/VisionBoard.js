@@ -64,10 +64,18 @@ export default function VisionBoard() {
 					</Form>
 				</Modal.Body>
 				<Modal.Footer>
-					<Button variant="secondary" onClick={handleClose}>
+					<Button
+						variant="secondary"
+						style={{ color: '#fff' }}
+						onClick={handleClose}
+					>
 						Close
 					</Button>
-					<Button variant="primary" onClick={handleClick}>
+					<Button
+						variant="primary"
+						style={{ color: '#fff' }}
+						onClick={handleClick}
+					>
 						Submit
 					</Button>
 				</Modal.Footer>

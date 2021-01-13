@@ -23,29 +23,12 @@ export function AuthProvider({ children }) {
 			const errorMessage = error.message;
 			console.log('in setPersistence ' + errorMessage);
 		}
-		// auth
-		// 	.setPersistence(auth.Auth.Persistence.SESSION)
-		// 	.then(() => {
-		// 		console.log('in then');
-		// 		// Existing and future Auth states are now persisted in the current
-		// 		// session only. Closing the window would clear any existing state even
-		// 		// if a user forgets to sign out.
-		// 		// ...
-		// 		// New sign-in will be persisted with session persistence.
-		// 		return auth.signInWithEmailAndPassword(email, password, catchErrorMsg);
-		// 	})
-		// 	.catch((error) => {
-		// 		// Handle Errors here.
-		// 		var errorCode = error.code;
-		// 		var errorMessage = error.message;
-		// 		console.log(errorCode, errorMessage);
-		// 	});
 	}
 	async function login(email, password, catchErrorMsg) {
 		try {
-			await setpersistence();
 			await auth.signInWithEmailAndPassword(email, password);
 			console.log('sign-in complete');
+			await setpersistence();
 		} catch (error) {
 			const errorMessage = error.message;
 			catchErrorMsg(errorMessage);
@@ -53,6 +36,19 @@ export function AuthProvider({ children }) {
 		}
 	}
 
+	// function login(email, password, catchErrorMsg) {
+	// 	auth
+	// 		.setPersistence(firebase.auth.Auth.Persistence.SESSION)
+	// 		.then(() => {
+	// 			return auth.signInWithEmailAndPassword(email, password, catchErrorMsg);
+	// 		})
+	// 		.catch((error) => {
+	// 			// Handle Errors here.
+	// 			var errorCode = error.code;
+	// 			var errorMessage = error.message;
+	// 			console.log(errorCode, errorMessage);
+	// 		});
+	// }
 	function logout() {
 		return auth.signOut();
 	}

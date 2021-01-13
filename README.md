@@ -16,3 +16,6 @@ check out the demo website -> [Link](https://yinnyc.github.io/Twain/)
         ![read](./demo-img/visionBoard.png)
   - [x] write data to visionboard database
         ![add](./demo-img/addPlan.png)
+- [x] Improve UI/UX
+  - [x] Add Plans Filter Feature
+        ![filter](demo-img/filter.png)

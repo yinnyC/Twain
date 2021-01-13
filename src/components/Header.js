@@ -18,7 +18,16 @@ export default function Header(props) {
 		}
 	}
 	return (
-		<Navbar bg="light" expand="lg" sticky="top">
+		<Navbar
+			bg="light"
+			expand="lg"
+			sticky="top"
+			className="shadow"
+			style={{
+				background:
+					'rgb(237,133,70) linear-gradient(266deg, rgba(237,133,70,0.6601015406162465) 33%, rgba(243,188,230,0.5452556022408963) 100%)',
+			}}
+		>
 			<Navbar.Brand
 				href=""
 				onClick={() => {

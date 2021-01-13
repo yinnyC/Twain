@@ -43,7 +43,7 @@ export default function UpdatePassword(props) {
 		<Container className="d-flex justify-content-center align-items-center">
 			<Card className="p-2 shadow col-md-5 m-5">
 				<Card.Body>
-					<h2 className="text-center mb-4">Change Password</h2>
+					<h2 className="text-center mb-4">Update Profile</h2>
 					{error && <Alert variant="danger">{error}</Alert>}
 					<Form onSubmit={handleSubmit}>
 						<Form.Group id="email">
@@ -71,7 +71,12 @@ export default function UpdatePassword(props) {
 								placeholder="Leave blank to keep the same"
 							/>
 						</Form.Group>
-						<Button disable={loading} className="w-100" type="submit">
+						<Button
+							disable={loading}
+							style={{ color: '#fff' }}
+							className="w-100 btn-lg"
+							type="submit"
+						>
 							Update
 						</Button>
 					</Form>
