@@ -1,6 +1,6 @@
 import React from 'react';
 import { AuthProvider } from '../contexts/AuthContext';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import SignupPage from '../pages/SignupPage';
 import Homepage from '../pages/Homepage';
 import PrivateRoute from './PrivateRoute';
