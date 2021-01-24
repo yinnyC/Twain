@@ -63,9 +63,9 @@ export default function Signup(props) {
 					</Form>
 				</Card.Body>
 				<Card.Footer style={{ backgroundColor: '#fff' }}>
-					<div className="w-100 text-center mb-2">
+					<div className=" text-center mb-2">
 						<Link
-							className="btn btn-secondary col-md-10 btn-lg"
+							className="btn btn-secondary w-100 btn-lg"
 							style={{ color: '#fff' }}
 							to="/"
 							onClick={() => {
